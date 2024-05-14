@@ -203,7 +203,7 @@
             btnDecimal.Name = "btnDecimal";
             btnDecimal.Size = new Size(65, 65);
             btnDecimal.TabIndex = 19;
-            btnDecimal.Text = ".";
+            btnDecimal.Text = ",";
             btnDecimal.UseVisualStyleBackColor = false;
             btnDecimal.Click += btnDecimal_Click;
             // 

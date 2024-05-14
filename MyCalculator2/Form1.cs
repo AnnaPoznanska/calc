@@ -2,8 +2,8 @@ namespace MyCalculator2
 {
     public partial class Form1 : Form
     {
-        String operatorChosen = "";
         Double resultValue = 0;
+        String operatorChosen = "";
         bool isOperatorChosen = false;
 
         public Form1()
@@ -22,7 +22,7 @@ namespace MyCalculator2
             
             // Get the button that was clicked
             Button button = (Button)sender;
-            // Print number of the clicked button: add it any time it is clicked
+            // Print text of the clicked button: add it any time it is clicked
             txtResult.Text = txtResult.Text + button.Text;
             isOperatorChosen = false;
 
@@ -67,11 +67,12 @@ namespace MyCalculator2
 
         private void btnDecimal_Click(object sender, EventArgs e)
         {
-            if (txtResult.Text.Contains('.') is false)
+            // Get the button that was clicked
+            Button button = (Button)sender;
+            // Allow only one decimal point per value
+            if (txtResult.Text.Contains(button.Text) is false)
             {
-                // Get the button that was clicked
-                Button button = (Button)sender;
-                // Print the text '.' of the clicked button to the screen
+                // Print text of the clicked button
                 txtResult.Text = txtResult.Text + button.Text;
                 btnDecimal.BackColor = SystemColors.ControlDarkDark;
                 isOperatorChosen = false;
