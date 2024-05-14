@@ -9,7 +9,8 @@ namespace MyCalculator2
 
         private void btnNumber_Click(object sender, EventArgs e)
         {
-
+            Button button = (Button)sender;
+            txtResult.Text = txtResult.Text + button.Text;
         }
 
         private void btnEquals_Click(object sender, EventArgs e)
