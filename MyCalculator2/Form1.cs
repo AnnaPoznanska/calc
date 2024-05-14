@@ -1,3 +1,5 @@
+using System.Diagnostics.Metrics;
+
 namespace MyCalculator2
 {
     public partial class Form1 : Form
@@ -20,12 +22,18 @@ namespace MyCalculator2
             {
                 txtResult.Text = "";
             }
-            
+            //If already summarized, start the operation from the beginning after selecting the number
+            else if (isSummedUp is true)
+            {
+                txtResult.Text = "";
+                resultValue = 0;
+            }
             // Get the button that was clicked
             Button button = (Button)sender;
             // Print text of the clicked button: add it any time it is clicked
             txtResult.Text = txtResult.Text + button.Text;
             isOperatorChosen = false;
+            isSummedUp = false;
 
         }
 
@@ -61,7 +69,7 @@ namespace MyCalculator2
             // Get the button that was clicked
             Button button = (Button)sender;
 
-            // Case when summing up is done using the next operator (without equal-to sign)
+            // Sup up while choosing operator multiple times (without equal-to sign)
             if (resultValue != 0 & isSummedUp is false)
             {
                 // perform 'click' event of the equal-to button
@@ -103,6 +111,7 @@ namespace MyCalculator2
         private void btnClearEntry_Click(object sender, EventArgs e)
         {
             txtResult.Text = "0";
+            isOperatorChosen = false; //new
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -110,6 +119,9 @@ namespace MyCalculator2
             txtResult.Text = "0";
             resultValue = 0;
             lblPendingVal.Text = "";
+            isOperatorChosen = false; //new
+            isSummedUp = false; //new
+            operatorChosen = ""; //new
         }
     }
 }
