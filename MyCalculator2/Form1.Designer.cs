@@ -284,9 +284,8 @@
             lblPendingVal.ForeColor = Color.FromArgb(64, 64, 64);
             lblPendingVal.Location = new Point(26, 45);
             lblPendingVal.Name = "lblPendingVal";
-            lblPendingVal.Size = new Size(226, 45);
+            lblPendingVal.Size = new Size(0, 45);
             lblPendingVal.TabIndex = 24;
-            lblPendingVal.Text = "lblPendingVal";
             // 
             // Form1
             // 
