@@ -5,6 +5,7 @@ namespace MyCalculator2
         Double resultValue = 0;
         String operatorChosen = "";
         bool isOperatorChosen = false;
+        bool isSummedUp = false;
 
         public Form1()
         {
@@ -52,6 +53,7 @@ namespace MyCalculator2
             // Transfer the value in textbox to result
             resultValue = Double.Parse(txtResult.Text);
             lblPendingVal.Text = "";
+            isSummedUp = true;
         }
 
         private void btnOperator_Click(object sender, EventArgs e)
@@ -59,7 +61,8 @@ namespace MyCalculator2
             // Get the button that was clicked
             Button button = (Button)sender;
 
-            if (resultValue != 0)
+            // Case when summing up is done using the next operator (without equal-to sign)
+            if (resultValue != 0 & isSummedUp is false)
             {
                 // perform 'click' event of the equal-to button
                 btnEquals.PerformClick();
