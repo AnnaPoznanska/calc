@@ -281,7 +281,7 @@
             // 
             lblPendingVal.AutoSize = true;
             lblPendingVal.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblPendingVal.ForeColor = Color.FromArgb(64, 64, 64);
+            lblPendingVal.ForeColor = Color.Gray;
             lblPendingVal.Location = new Point(26, 45);
             lblPendingVal.Name = "lblPendingVal";
             lblPendingVal.Size = new Size(0, 45);

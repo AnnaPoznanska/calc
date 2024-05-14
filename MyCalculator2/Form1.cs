@@ -31,8 +31,7 @@ namespace MyCalculator2
         private void btnEquals_Click(object sender, EventArgs e)
         {
             // Perform calculation depending on operator chosen
-            // On the left side of the equation is the value passed after operator is clicked
-            // On the right side: the value passed after equals sign is clicked
+            // Between the value after choosing operator, and the one after summing up
             switch (operatorChosen)
             {
                 case "+":
@@ -50,12 +49,29 @@ namespace MyCalculator2
                 default:
                     break;
             }
+            // Transfer the value in textbox to result
+            resultValue = Double.Parse(txtResult.Text);
+            lblPendingVal.Text = "";
         }
 
         private void btnOperator_Click(object sender, EventArgs e)
         {
             // Get the button that was clicked
             Button button = (Button)sender;
+
+            if (resultValue != 0)
+            {
+                // perform 'click' event of the equal-to button
+                btnEquals.PerformClick();
+                // Save information what operator was clicked
+                operatorChosen = button.Text;
+                // Print equation above textbox
+                lblPendingVal.Text = resultValue + " " + operatorChosen;
+                isOperatorChosen = true;
+                btnDecimal.BackColor = SystemColors.ControlLightLight;
+            }
+            else
+            {
             // Save information what operator was clicked
             operatorChosen = button.Text;
             // Pass number stored in textbox to resultValue variable
@@ -63,6 +79,8 @@ namespace MyCalculator2
             // Print equation above textbox
             lblPendingVal.Text = resultValue + " " + operatorChosen;
             isOperatorChosen = true;
+            btnDecimal.BackColor = SystemColors.ControlLightLight;
+            }
         }
 
         private void btnDecimal_Click(object sender, EventArgs e)
@@ -88,6 +106,7 @@ namespace MyCalculator2
         {
             txtResult.Text = "0";
             resultValue = 0;
+            lblPendingVal.Text = "";
         }
     }
 }
