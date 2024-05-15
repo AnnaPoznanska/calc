@@ -45,12 +45,19 @@ namespace MyCalculator2
             isSummedUp = false;
             errorOccured = false;
             btnPlus.BackColor = SystemColors.ControlLightLight;
+            btnPlus.Enabled = true;
             btnMinus.BackColor = SystemColors.ControlLightLight;
+            btnMinus.Enabled = true;
             btnMulti.BackColor = SystemColors.ControlLightLight;
+            btnMulti.Enabled = true;
             btnDivide.BackColor = SystemColors.ControlLightLight;
+            btnDivide.Enabled = true;
             btnDecimal.BackColor = SystemColors.ControlLightLight;
+            btnDecimal.Enabled = true;
             btnClearEntry.BackColor = SystemColors.ControlLight;
+            btnClearEntry.Enabled = true;
             btnEquals.BackColor = SystemColors.ControlLight;
+            btnEquals.Enabled = true;
 
         }
 
@@ -93,11 +100,17 @@ namespace MyCalculator2
                                 lblPendingVal.Text = "Dividing by zero undefined";
                                 errorOccured = true;
                                 btnPlus.BackColor = SystemColors.ControlDark;
+                                btnPlus.Enabled = false;
                                 btnMinus.BackColor = SystemColors.ControlDark;
+                                btnMinus.Enabled = false;
                                 btnMulti.BackColor = SystemColors.ControlDark;
+                                btnMulti.Enabled = false;
                                 btnDivide.BackColor = SystemColors.ControlDark;
+                                btnDivide.Enabled = false;
                                 btnDecimal.BackColor = SystemColors.ControlDark;
+                                btnDecimal.Enabled = false;
                                 btnClearEntry.BackColor = SystemColors.ControlDark;
+                                btnClearEntry.Enabled = false;
                             }
                             else
                             {
@@ -116,6 +129,7 @@ namespace MyCalculator2
                     isSummedUp = true;
                     isOperatorInTheEquation = false;
                     btnEquals.BackColor = SystemColors.ControlDark;
+                    btnEquals.Enabled = false;
                 }
             }
         }
@@ -152,10 +166,15 @@ namespace MyCalculator2
                         isOperatorChosen = true;
                         isOperatorInTheEquation = true;
                         btnPlus.BackColor = SystemColors.ControlDark;
+                        btnPlus.Enabled = false;
                         btnMinus.BackColor = SystemColors.ControlDark;
+                        btnMinus.Enabled = false;
                         btnMulti.BackColor = SystemColors.ControlDark;
+                        btnMulti.Enabled = false;
                         btnDivide.BackColor = SystemColors.ControlDark;
+                        btnDivide.Enabled = false;
                         btnDecimal.BackColor = SystemColors.ControlLightLight;
+                        btnDecimal.Enabled = true;
                     }
                 }
                 else
@@ -169,11 +188,16 @@ namespace MyCalculator2
                     isOperatorChosen = true;
                     isOperatorInTheEquation = true;
                     btnPlus.BackColor = SystemColors.ControlDark;
+                    btnPlus.Enabled = false;
                     btnMinus.BackColor = SystemColors.ControlDark;
+                    btnMinus.Enabled = false;
                     btnMulti.BackColor = SystemColors.ControlDark;
+                    btnMulti.Enabled = false;
                     btnDivide.BackColor = SystemColors.ControlDark;
+                    btnDivide.Enabled = false;
                     errorOccured = false;
                     btnDecimal.BackColor = SystemColors.ControlLightLight;
+                    btnDecimal.Enabled = true;
                 }
             }
         }
@@ -193,7 +217,8 @@ namespace MyCalculator2
                 {
                     // Print text of the clicked button
                     txtResult.Text = txtResult.Text + button.Text;
-                    btnDecimal.BackColor = SystemColors.ControlDarkDark;
+                    btnDecimal.BackColor = SystemColors.ControlDark;
+                    btnDecimal.Enabled = false;
                     isOperatorChosen = false;
                     isOperatorInTheEquation = false;
                     errorOccured = false;
@@ -225,11 +250,17 @@ namespace MyCalculator2
             operatorChosen = "";
             errorOccured = false;
             btnPlus.BackColor = SystemColors.ControlLightLight;
+            btnPlus.Enabled = true;
             btnMinus.BackColor = SystemColors.ControlLightLight;
+            btnMinus.Enabled = true;
             btnMulti.BackColor = SystemColors.ControlLightLight;
+            btnMulti.Enabled = true;
             btnDivide.BackColor = SystemColors.ControlLightLight;
+            btnDivide.Enabled = true;
             btnDecimal.BackColor = SystemColors.ControlLightLight;
+            btnDecimal.Enabled = true;
             btnClearEntry.BackColor = SystemColors.ControlLight;
+            btnClearEntry.Enabled = true;
         }
     }
 }

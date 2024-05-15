@@ -270,6 +270,8 @@
             // 
             // txtResult
             // 
+            txtResult.BackColor = SystemColors.HighlightText;
+            txtResult.Enabled = false;
             txtResult.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             txtResult.Location = new Point(26, 93);
             txtResult.Name = "txtResult";
@@ -285,7 +287,7 @@
             lblPendingVal.ForeColor = Color.Gray;
             lblPendingVal.Location = new Point(26, 45);
             lblPendingVal.Name = "lblPendingVal";
-            lblPendingVal.Size = new Size(38, 45);
+            lblPendingVal.Size = new Size(0, 45);
             lblPendingVal.TabIndex = 24;
             // 
             // lblPendingValDescr
