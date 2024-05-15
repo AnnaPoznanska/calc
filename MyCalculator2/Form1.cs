@@ -18,8 +18,9 @@ namespace MyCalculator2
 
         private void btnNumber_Click(object sender, EventArgs e)
         {
-            // 1st: Clear the default zero when number button is clicked
-            // 2nd: Clear the first result value when the second one is selected (right side of the equation)
+            // 1st case: Clear the default zero when number button is clicked
+            // or
+            // 2nd case: Clear the first result value when the second one is selected (right side of the equation)
             if ((txtResult.Text == "0") || (isOperatorChosen is true))
             {
                 txtResult.Text = "";
@@ -31,7 +32,7 @@ namespace MyCalculator2
                 resultValue = 0;
             }
             // Clear the label above textbox to remove the div/0 error message
-            else if (errorOccured is true)
+            if (errorOccured is true) //not else if
             {
                 lblPendingVal.Text = "";
             }
@@ -55,7 +56,7 @@ namespace MyCalculator2
         {
             if (errorOccured is true)
             {
-                // perform 'click' event of the clear button
+                // Perform 'click' event of the clear button
                 btnClear.PerformClick();
             }
             else
@@ -109,7 +110,7 @@ namespace MyCalculator2
 
         private void btnOperator_Click(object sender, EventArgs e)
         {
-            if (errorOccured is true)
+            if (errorOccured is true || isOperatorChosen is true)
             {
                 // Do nothing
             }
