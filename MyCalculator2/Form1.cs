@@ -54,62 +54,73 @@ namespace MyCalculator2
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            if (errorOccured is true)
-            {
-                // Perform 'click' event of the clear button
-                btnClear.PerformClick();
+            // Blocked the option to click only equal-to sign many times
+            if (isSummedUp is true)
+            { 
+                // Do nothing
             }
             else
             {
-                // Perform calculation depending on operator chosen
-                // Between the value after choosing operator, and the one after summing up
-                switch (operatorChosen)
+                if (errorOccured is true)
                 {
-                    case "+":
-                        txtResult.Text = (resultValue + Double.Parse(txtResult.Text)).ToString();
-                        break;
-                    case "-":
-                        txtResult.Text = (resultValue - Double.Parse(txtResult.Text)).ToString();
-                        break;
-                    case "*":
-                        txtResult.Text = (resultValue * Double.Parse(txtResult.Text)).ToString();
-                        break;
-                    case "/":
-                        // Avoid dividing by zero
-                        if (txtResult.Text == "0")
-                        {
-                            //txtResult.Text = "";
-                            resultValue = 0;
-                            lblPendingVal.Text = "Dividing by zero undefined";
-                            errorOccured = true;
-                            btnPlus.BackColor = SystemColors.ControlDark;
-                            btnMinus.BackColor = SystemColors.ControlDark;
-                            btnMulti.BackColor = SystemColors.ControlDark;
-                            btnDivide.BackColor = SystemColors.ControlDark;
-                            btnDecimal.BackColor = SystemColors.ControlDark;
-                            btnClearEntry.BackColor = SystemColors.ControlDark;
-                        }
-                        else
-                        {
-                            txtResult.Text = (resultValue / Double.Parse(txtResult.Text)).ToString();
-                        }
-                        //txtResult.Text = (resultValue / Double.Parse(txtResult.Text)).ToString();
-                        break;
-                    default:
-                        break;
+                    // Perform 'click' event of the clear button
+                    btnClear.PerformClick();
                 }
-            // Transfer the value in textbox to result
-            resultValue = Double.Parse(txtResult.Text);
-            if (lblPendingVal.Text != "Dividing by zero undefined")
+                else
                 {
-                    lblPendingVal.Text = "";
+                    // Perform calculation depending on operator chosen
+                    // Between the value after choosing operator, and the one after summing up
+                    switch (operatorChosen)
+                    {
+                        case "+":
+                            txtResult.Text = (resultValue + Double.Parse(txtResult.Text)).ToString();
+                            break;
+                        case "-":
+                            txtResult.Text = (resultValue - Double.Parse(txtResult.Text)).ToString();
+                            break;
+                        case "*":
+                            txtResult.Text = (resultValue * Double.Parse(txtResult.Text)).ToString();
+                            break;
+                        case "/":
+                            // Avoid dividing by zero
+                            if (txtResult.Text == "0")
+                            {
+                                //txtResult.Text = "";
+                                resultValue = 0;
+                                lblPendingVal.Text = "Dividing by zero undefined";
+                                errorOccured = true;
+                                btnPlus.BackColor = SystemColors.ControlDark;
+                                btnMinus.BackColor = SystemColors.ControlDark;
+                                btnMulti.BackColor = SystemColors.ControlDark;
+                                btnDivide.BackColor = SystemColors.ControlDark;
+                                btnDecimal.BackColor = SystemColors.ControlDark;
+                                btnClearEntry.BackColor = SystemColors.ControlDark;
+                            }
+                            else
+                            {
+                                txtResult.Text = (resultValue / Double.Parse(txtResult.Text)).ToString();
+                            }
+                            //txtResult.Text = (resultValue / Double.Parse(txtResult.Text)).ToString();
+                            break;
+                        default:
+                            break;
+                    }
+                    // Transfer the value in textbox to result
+                    resultValue = Double.Parse(txtResult.Text);
+                    if (lblPendingVal.Text != "Dividing by zero undefined")
+                    {
+                        lblPendingVal.Text = "";
+                    }
+                    isSummedUp = true;
                 }
-            isSummedUp = true;
             }
         }
 
         private void btnOperator_Click(object sender, EventArgs e)
         {
+            // 1st case: Blocked the option to click operator right after error occurance
+            // or
+            // 2nd case: Blocked the option to click only operator many times
             if (errorOccured is true || isOperatorChosen is true)
             {
                 // Do nothing
