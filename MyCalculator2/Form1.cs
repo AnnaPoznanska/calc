@@ -55,8 +55,10 @@ namespace MyCalculator2
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            // Blocked the option to click only equal-to sign many times
-            if (isSummedUp is true)
+            // 1st case: Blocked the option to click only equal-to sign many times
+            // or
+            // 2nd case: If operator is not chosen at all - summing up won't be active
+            if (isSummedUp is true || isOperatorChosen is false)
             { 
                 // Do nothing
             }
