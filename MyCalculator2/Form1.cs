@@ -235,8 +235,17 @@ namespace MyCalculator2
             }
             else
             {
-                txtResult.Text = "0";
-                errorOccured = false;
+                // If current stage is right after summing up, clear also the result stored
+                if (isSummedUp is true)
+                {
+                    txtResult.Text = "0";
+                    resultValue = 0;
+                    isSummedUp = false;
+                }
+                else
+                {
+                    txtResult.Text = "0";
+                }
             }
         }
 
