@@ -49,6 +49,7 @@ namespace MyCalculator2
             btnDivide.BackColor = SystemColors.ControlLightLight;
             btnDecimal.BackColor = SystemColors.ControlLightLight;
             btnClearEntry.BackColor = SystemColors.ControlLight;
+            btnEquals.BackColor = SystemColors.ControlLight;
 
         }
 
@@ -112,6 +113,7 @@ namespace MyCalculator2
                         lblPendingVal.Text = "";
                     }
                     isSummedUp = true;
+                    btnEquals.BackColor = SystemColors.ControlDark;
                 }
             }
         }

@@ -49,6 +49,7 @@
             btnOne = new Button();
             txtResult = new TextBox();
             lblPendingVal = new Label();
+            lblPendingValDescr = new Label();
             SuspendLayout();
             // 
             // btnSeven
@@ -284,8 +285,19 @@
             lblPendingVal.ForeColor = Color.Gray;
             lblPendingVal.Location = new Point(26, 45);
             lblPendingVal.Name = "lblPendingVal";
-            lblPendingVal.Size = new Size(0, 45);
+            lblPendingVal.Size = new Size(38, 45);
             lblPendingVal.TabIndex = 24;
+            // 
+            // lblPendingValDescr
+            // 
+            lblPendingValDescr.AutoSize = true;
+            lblPendingValDescr.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPendingValDescr.ForeColor = Color.Gray;
+            lblPendingValDescr.Location = new Point(25, 17);
+            lblPendingValDescr.Name = "lblPendingValDescr";
+            lblPendingValDescr.Size = new Size(148, 28);
+            lblPendingValDescr.TabIndex = 25;
+            lblPendingValDescr.Text = "Pending Value:";
             // 
             // Form1
             // 
@@ -293,6 +305,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveBorder;
             ClientSize = new Size(495, 555);
+            Controls.Add(lblPendingValDescr);
             Controls.Add(lblPendingVal);
             Controls.Add(txtResult);
             Controls.Add(btnEquals);
@@ -345,5 +358,6 @@
         private Button btnOne;
         private TextBox txtResult;
         private Label lblPendingVal;
+        private Label lblPendingValDescr;
     }
 }
