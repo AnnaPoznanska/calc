@@ -107,7 +107,7 @@ namespace MyCalculator2
                     }
                     // Transfer the value in textbox to result
                     resultValue = Double.Parse(txtResult.Text);
-                    if (lblPendingVal.Text != "Dividing by zero undefined")
+                    if (lblPendingVal.Text != "Dividing by zero undefined") // think where to move it
                     {
                         lblPendingVal.Text = "";
                     }
@@ -146,6 +146,10 @@ namespace MyCalculator2
                         // Print equation above textbox
                         lblPendingVal.Text = resultValue + " " + operatorChosen;
                         isOperatorChosen = true;
+                        btnPlus.BackColor = SystemColors.ControlDark;
+                        btnMinus.BackColor = SystemColors.ControlDark;
+                        btnMulti.BackColor = SystemColors.ControlDark;
+                        btnDivide.BackColor = SystemColors.ControlDark;
                         btnDecimal.BackColor = SystemColors.ControlLightLight;
                     }
                 }
@@ -158,6 +162,10 @@ namespace MyCalculator2
                     // Print equation above textbox
                     lblPendingVal.Text = resultValue + " " + operatorChosen;
                     isOperatorChosen = true;
+                    btnPlus.BackColor = SystemColors.ControlDark;
+                    btnMinus.BackColor = SystemColors.ControlDark;
+                    btnMulti.BackColor = SystemColors.ControlDark;
+                    btnDivide.BackColor = SystemColors.ControlDark;
                     errorOccured = false;
                     btnDecimal.BackColor = SystemColors.ControlLightLight;
                 }
