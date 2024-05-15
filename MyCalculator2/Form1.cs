@@ -10,6 +10,7 @@ namespace MyCalculator2
         bool isOperatorChosen = false;
         bool isSummedUp = false;
         bool errorOccured = false;
+        bool isOperatorInTheEquation = false;
 
         public Form1()
         {
@@ -58,7 +59,7 @@ namespace MyCalculator2
             // 1st case: Blocked the option to click only equal-to sign many times
             // or
             // 2nd case: If operator is not chosen at all - summing up won't be active
-            if (isSummedUp is true || isOperatorChosen is false)
+            if (isSummedUp is true || isOperatorInTheEquation is false)
             { 
                 // Do nothing
             }
@@ -115,6 +116,7 @@ namespace MyCalculator2
                         lblPendingVal.Text = "";
                     }
                     isSummedUp = true;
+                    isOperatorInTheEquation = false;
                     btnEquals.BackColor = SystemColors.ControlDark;
                 }
             }
@@ -150,6 +152,7 @@ namespace MyCalculator2
                         // Print equation above textbox
                         lblPendingVal.Text = resultValue + " " + operatorChosen;
                         isOperatorChosen = true;
+                        isOperatorInTheEquation = true;
                         btnPlus.BackColor = SystemColors.ControlDark;
                         btnMinus.BackColor = SystemColors.ControlDark;
                         btnMulti.BackColor = SystemColors.ControlDark;
@@ -166,6 +169,7 @@ namespace MyCalculator2
                     // Print equation above textbox
                     lblPendingVal.Text = resultValue + " " + operatorChosen;
                     isOperatorChosen = true;
+                    isOperatorInTheEquation = true;
                     btnPlus.BackColor = SystemColors.ControlDark;
                     btnMinus.BackColor = SystemColors.ControlDark;
                     btnMulti.BackColor = SystemColors.ControlDark;
@@ -193,6 +197,7 @@ namespace MyCalculator2
                     txtResult.Text = txtResult.Text + button.Text;
                     btnDecimal.BackColor = SystemColors.ControlDarkDark;
                     isOperatorChosen = false;
+                    isOperatorInTheEquation = false;
                     errorOccured = false;
                     isSummedUp = false;
                 }
@@ -208,7 +213,7 @@ namespace MyCalculator2
             else
             {
                 txtResult.Text = "0";
-                isOperatorChosen = false; //new
+                isOperatorChosen = false; //new - to think about it
                 errorOccured = false;
             }
         }
