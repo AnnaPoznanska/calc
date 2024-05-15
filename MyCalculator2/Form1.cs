@@ -219,9 +219,9 @@ namespace MyCalculator2
                     txtResult.Text = txtResult.Text + button.Text;
                     btnDecimal.BackColor = SystemColors.ControlDark;
                     btnDecimal.Enabled = false;
-                    isOperatorChosen = false;
-                    isOperatorInTheEquation = false;
-                    errorOccured = false;
+                    //isOperatorChosen = false;
+                    //isOperatorInTheEquation = false;
+                    //errorOccured = false;
                     isSummedUp = false;
                 }
             }
