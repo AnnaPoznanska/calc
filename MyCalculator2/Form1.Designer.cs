@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btnSeven = new Button();
             btnEight = new Button();
             btnNine = new Button();
@@ -48,6 +49,7 @@
             btnOne = new Button();
             txtResult = new TextBox();
             lblPendingVal = new Label();
+            lblPendingValDescr = new Label();
             SuspendLayout();
             // 
             // btnSeven
@@ -202,7 +204,7 @@
             btnDecimal.Name = "btnDecimal";
             btnDecimal.Size = new Size(65, 65);
             btnDecimal.TabIndex = 19;
-            btnDecimal.Text = ".";
+            btnDecimal.Text = ",";
             btnDecimal.UseVisualStyleBackColor = false;
             btnDecimal.Click += btnDecimal_Click;
             // 
@@ -268,6 +270,8 @@
             // 
             // txtResult
             // 
+            txtResult.BackColor = SystemColors.HighlightText;
+            txtResult.Enabled = false;
             txtResult.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             txtResult.Location = new Point(26, 93);
             txtResult.Name = "txtResult";
@@ -280,12 +284,22 @@
             // 
             lblPendingVal.AutoSize = true;
             lblPendingVal.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblPendingVal.ForeColor = Color.FromArgb(64, 64, 64);
+            lblPendingVal.ForeColor = Color.Gray;
             lblPendingVal.Location = new Point(26, 45);
             lblPendingVal.Name = "lblPendingVal";
-            lblPendingVal.Size = new Size(226, 45);
+            lblPendingVal.Size = new Size(0, 45);
             lblPendingVal.TabIndex = 24;
-            lblPendingVal.Text = "lblPendingVal";
+            // 
+            // lblPendingValDescr
+            // 
+            lblPendingValDescr.AutoSize = true;
+            lblPendingValDescr.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPendingValDescr.ForeColor = Color.Gray;
+            lblPendingValDescr.Location = new Point(25, 17);
+            lblPendingValDescr.Name = "lblPendingValDescr";
+            lblPendingValDescr.Size = new Size(148, 28);
+            lblPendingValDescr.TabIndex = 25;
+            lblPendingValDescr.Text = "Pending Value:";
             // 
             // Form1
             // 
@@ -293,6 +307,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveBorder;
             ClientSize = new Size(495, 555);
+            Controls.Add(lblPendingValDescr);
             Controls.Add(lblPendingVal);
             Controls.Add(txtResult);
             Controls.Add(btnEquals);
@@ -314,6 +329,7 @@
             Controls.Add(btnEight);
             Controls.Add(btnSeven);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -344,5 +360,6 @@
         private Button btnOne;
         private TextBox txtResult;
         private Label lblPendingVal;
+        private Label lblPendingValDescr;
     }
 }
