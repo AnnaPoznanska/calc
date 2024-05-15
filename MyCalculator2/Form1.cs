@@ -26,14 +26,14 @@ namespace MyCalculator2
             {
                 txtResult.Text = "";
             }
-            //If already summarized, start the operation from the beginning after selecting the number
+            // If already summarized, start the operation from the beginning after selecting the number
             else if (isSummedUp is true)
             {
                 txtResult.Text = "";
                 resultValue = 0;
             }
             // Clear the label above textbox to remove the div/0 error message
-            if (errorOccured is true) //not else if
+            if (errorOccured is true)
             {
                 lblPendingVal.Text = "";
             }
@@ -72,8 +72,8 @@ namespace MyCalculator2
                 }
                 else
                 {
-                    // Perform calculation depending on operator chosen
-                    // Between the value after choosing operator, and the one after summing up
+                    // Perform calculation depending on operator chosen,
+                    // between the value passed after clicking operator, and the one passed after summing up
                     switch (operatorChosen)
                     {
                         case "+":
@@ -89,7 +89,6 @@ namespace MyCalculator2
                             // Avoid dividing by zero
                             if (txtResult.Text == "0")
                             {
-                                //txtResult.Text = "";
                                 resultValue = 0;
                                 lblPendingVal.Text = "Dividing by zero undefined";
                                 errorOccured = true;
@@ -104,14 +103,13 @@ namespace MyCalculator2
                             {
                                 txtResult.Text = (resultValue / Double.Parse(txtResult.Text)).ToString();
                             }
-                            //txtResult.Text = (resultValue / Double.Parse(txtResult.Text)).ToString();
                             break;
                         default:
                             break;
                     }
                     // Transfer the value in textbox to result
                     resultValue = Double.Parse(txtResult.Text);
-                    if (lblPendingVal.Text != "Dividing by zero undefined") // think where to move it
+                    if (lblPendingVal.Text != "Dividing by zero undefined")
                     {
                         lblPendingVal.Text = "";
                     }
@@ -213,7 +211,6 @@ namespace MyCalculator2
             else
             {
                 txtResult.Text = "0";
-                isOperatorChosen = false; //new - to think about it
                 errorOccured = false;
             }
         }
@@ -223,9 +220,9 @@ namespace MyCalculator2
             txtResult.Text = "0";
             resultValue = 0;
             lblPendingVal.Text = "";
-            isOperatorChosen = false; //new
-            isSummedUp = false; //new
-            operatorChosen = ""; //new
+            isOperatorChosen = false;
+            isSummedUp = false;
+            operatorChosen = "";
             errorOccured = false;
             btnPlus.BackColor = SystemColors.ControlLightLight;
             btnMinus.BackColor = SystemColors.ControlLightLight;
